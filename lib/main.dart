@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:posts/core/app_theme.dart';
-import 'package:posts/features/posts/presentation/screens/posts_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:posts/bloc/posts_bloc.dart';
+
+import 'package:posts/pages/posts_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +13,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: appTheme,
-      home: const PostsPage(),
-    );
+    return BlocProvider(
+        create: (context) => PostsBloc()..add(GetPostsEvent()),
+        child: const MaterialApp(
+          home: PostsPage(),
+        ));
   }
 }

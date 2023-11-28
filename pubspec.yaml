@@ -36,6 +36,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   equatable: ^2.0.5
+  dartz:
+  http: 
+  flutter_lints: ^2.0.0
+  flutter_bloc:
+  bloc_concurrency:
 
 dev_dependencies:
   flutter_test:
